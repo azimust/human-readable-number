@@ -5,7 +5,7 @@ module.exports = function toReadable (number) {
     'eleven', 'twelve','thirteen', 'fourteen', 'fifteen',
     'sixteen', 'seventeen', 'eighteen', 'nineteen'
     ];
-    const t_n = ['twenty', 'thirty', 'fourty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
+    const t_n = ['twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
     const hundred = ['hundred'];
 
     if(number < 20){
@@ -15,6 +15,6 @@ module.exports = function toReadable (number) {
         return t_n[Math.floor(number / 10) - 2] + (number % 10 ? ' ' + z_n[number % 10] : '')
     }
     if(number < 1000){
-        return z_n[Math.floor(number / 100)] + ' ' + hundred + ' ' + (number % 100 == 0 ? '' : toReadable(number % 100))
+        return z_n[Math.floor(number / 100)] + ' ' + hundred  + (number % 100 == 0 ? '' : ' ' + toReadable(number % 100))
     }
 }
